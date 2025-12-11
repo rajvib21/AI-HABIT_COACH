@@ -1,19 +1,19 @@
 from fastapi import FastAPI
 from .db import Base, engine
 
-# Import models
-from ..models.student import Student
-from ..models.habit import HabitLog
+# Import models so SQLAlchemy creates tables
+from ..models import student, habit
 
-# Import routers
+# Import routers (IMPORTANT: router object, not module)
 from ..routers.students import router as students_router
 from ..routers.habits import router as habits_router
 
-# Create database tables
+# Create DB tables
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="AI Habit Tracker & AI Coach")
+app = FastAPI(title="AI Habit Tracker & Coach")
 
-# Include routers
+# REGISTER ROUTERS
 app.include_router(students_router)
 app.include_router(habits_router)
+

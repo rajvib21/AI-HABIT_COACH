@@ -20,6 +20,7 @@ from ..ml.train_habit_model import load_logs_to_df
 
 router = APIRouter(prefix="/habits", tags=["habits"])
 
+
 # basic CRUD from before (create_log, get_logs, predict, coach, routine) - keep as is
 @router.post("/log", response_model=HabitOut)
 def create_log(data: HabitCreate, db: Session = Depends(get_db)):
@@ -33,6 +34,7 @@ def create_log(data: HabitCreate, db: Session = Depends(get_db)):
 def get_logs(student_id: int, db: Session = Depends(get_db)):
     logs = db.query(HabitLog).filter(HabitLog.student_id == student_id).order_by(HabitLog.date).all()
     return logs
+    
 
 @router.get("/predict/{student_id}", response_model=PredictionOut)
 def predict_break(student_id: int, db: Session = Depends(get_db)):
