@@ -144,9 +144,6 @@ pip install -r requirements.txt
 uvicorn backend.app.main:app --reload
 
 
-Open API docs:
-
-👉 http://127.0.0.1:8000/docs
 
 5️⃣ Start Streamlit app
 
@@ -154,10 +151,6 @@ Open NEW terminal:
 
 streamlit run streamlit_app/habit_ui.py
 
-
-The app opens at:
-
-👉 http://localhost:8501/
 
 6️⃣ Start Ollama (AI Coach)
 
