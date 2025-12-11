@@ -99,4 +99,89 @@ Suggests improvements based on last habit entry:
 ---
 
 # 🗂 Project Structure
+AIHabitCoach/
+│
+├── backend/
+│ ├── app/
+│ │ ├── db.py
+│ │ ├── main.py
+│ ├── models/
+│ ├── routers/
+│ ├── schemas/
+│ └── ml/
+│
+├── streamlit_app/
+│ └── habit_ui.py
+│
+├── models/
+│ └── habit_predict.joblib (auto-generated)
+│
+└── README.md
+
+
+---
+
+# 🛠 Installation & Setup
+
+## 1️⃣ Clone the repo
+
+```sh
+git clone https://github.com/rajvib21/AI-HABIT_COACH.git
+cd AI-HABIT_COACH
+
+2️⃣ Create virtual environment
+python -m venv venv
+
+
+Activate (Windows):
+
+venv\Scripts\activate
+
+3️⃣ Install dependencies
+pip install -r requirements.txt
+
+4️⃣ Start FastAPI backend
+uvicorn backend.app.main:app --reload
+
+
+Open API docs:
+
+👉 http://127.0.0.1:8000/docs
+
+5️⃣ Start Streamlit app
+
+Open NEW terminal:
+
+streamlit run streamlit_app/habit_ui.py
+
+
+The app opens at:
+
+👉 http://localhost:8501/
+
+6️⃣ Start Ollama (AI Coach)
+
+Install from: https://ollama.com/download
+
+Run model:
+
+ollama pull llama3.2
+ollama serve
+
+🎯 Future Enhancements
+
+Gamification (XP, Badges, Streak Fire)
+
+Weekly AI Insights Report
+
+Mood Forecast Model
+
+Voice-based coaching
+
+Personal Habit Timeline
+
+💡 Author
+
+Rajvi Bhatt
+
 
